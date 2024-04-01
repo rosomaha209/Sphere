@@ -1,18 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="2122fdaa-686b-458f-a4e4-5995bdd33a87" name="Changes" comment="innit: initialization my project" />
+    <list default="true" id="2122fdaa-686b-458f-a4e4-5995bdd33a87" name="Changes" comment="innit: initialization my project">
+      <change afterPath="$PROJECT_DIR$/API/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/API/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/API/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/API/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/API/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/API/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/API/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sphere/celery.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feed/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feed/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feed/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feed/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feed/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feed/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feed/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notifications/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notifications/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notifications/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notifications/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notifications/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notifications/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notifications/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/posts/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/posts/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/posts/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/posts/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/posts/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/posts/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/posts/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/search/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/search/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/search/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/search/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/search/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/search/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/search/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sphere/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sphere/settings.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "rosomaha209"
+  }
 }]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="971df2cf-bb22-453c-a011-45e4e33b8cbc" />
+        <option name="url" value="https://github.com/rosomaha209/Sphere.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2eVppIPYKPPCL16mQbAZYqy5PPs" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -29,6 +112,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/rosom/PycharmProjects/Sphere",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -37,6 +121,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\rosom\PycharmProjects\Sphere" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Sphere" type="Python.DjangoServer" factoryName="Django server">
       <module name="Sphere" />
@@ -78,7 +167,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1711999781661</updated>
-      <workItem from="1711999807419" duration="656000" />
+      <workItem from="1711999807419" duration="6931000" />
     </task>
     <task id="LOCAL-00001" summary="innit: initialization my project">
       <option name="closed" value="true" />
@@ -96,7 +185,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712000454538</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="innit: initialization my project">
+      <option name="closed" value="true" />
+      <created>1712000564627</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1712000564627</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
