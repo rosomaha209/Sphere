@@ -1,0 +1,86 @@
+# Python bytecode files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Django specific
+*.log
+*.pot
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+
+# If you are using PostgreSQL
+*.data
+*.pid
+
+# Docker specific
+*.env
+docker-compose*.yml
+Dockerfile
+.dockerignore
+.env.db
+.env.django
+.env.local
+
+# Virtual environment
+venv/
+ENV/
+env/
+.env
+.python-version
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# PyCharm
+.idea/
+*.iml
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# VS Code
+.vscode/
+
+# macOS specific
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
