@@ -54,3 +54,6 @@ test:
 
 up_build:
 	$(DC) up -d --build
+
+down_web:
+	$(DC) down web

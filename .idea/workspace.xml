@@ -4,69 +4,44 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2122fdaa-686b-458f-a4e4-5995bdd33a87" name="Changes" comment="innit: initialization my project">
-      <change afterPath="$PROJECT_DIR$/API/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/API/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/API/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/API/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/API/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/API/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/API/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sphere/celery.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feed/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feed/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feed/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feed/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feed/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feed/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feed/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notifications/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notifications/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notifications/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notifications/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notifications/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notifications/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notifications/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/posts/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/posts/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/posts/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/posts/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/posts/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/posts/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/posts/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="2122fdaa-686b-458f-a4e4-5995bdd33a87" name="Changes" comment="innit: start project on Docker">
+      <change afterPath="$PROJECT_DIR$/messaging-ui/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-ui/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-ui/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-ui/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-ui/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-ui/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-ui/public/logo192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-ui/public/logo512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-ui/public/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-ui/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-ui/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-ui/src/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-ui/src/App.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-ui/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-ui/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-ui/src/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-ui/src/reportWebVitals.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-ui/src/setupTests.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/form-toggles.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/users/edit_profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/users/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/users/profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/users/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/migrations/0002_customuser_first_name_customuser_last_name_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/migrations/0003_customuser_profile_pic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/migrations/0004_customuser_about_me_customuser_city_and_more.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sphere/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sphere/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sphere/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sphere/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,12 +54,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "rosomaha209"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;rosomaha209&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -92,6 +67,9 @@
         <option name="url" value="https://github.com/rosomaha209/Sphere.git" />
       </UrlAndAccount>
     </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -104,25 +82,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/rosom/PycharmProjects/Sphere",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Django Server.Sphere.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
+    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR_AND_PREVIEW&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/rosom/PycharmProjects/Sphere&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\rosom\PycharmProjects\Sphere" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\rosom\PycharmProjects\Sphere\static\images" />
       <recent name="C:\Users\rosom\PycharmProjects\Sphere" />
     </key>
   </component>
@@ -134,6 +120,7 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="Sphere.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -168,6 +155,15 @@
       <option name="presentableId" value="Default" />
       <updated>1711999781661</updated>
       <workItem from="1711999807419" duration="6931000" />
+      <workItem from="1712006806909" duration="132000" />
+      <workItem from="1712076483318" duration="1360000" />
+      <workItem from="1712089029813" duration="1608000" />
+      <workItem from="1712169272845" duration="62000" />
+      <workItem from="1712169345768" duration="434000" />
+      <workItem from="1712169794947" duration="1028000" />
+      <workItem from="1712170901190" duration="8930000" />
+      <workItem from="1712337660927" duration="2476000" />
+      <workItem from="1712392012566" duration="7015000" />
     </task>
     <task id="LOCAL-00001" summary="innit: initialization my project">
       <option name="closed" value="true" />
@@ -193,7 +189,23 @@
       <option name="project" value="LOCAL" />
       <updated>1712000564627</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="innit: start project on Docker">
+      <option name="closed" value="true" />
+      <created>1712006914743</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1712006914743</updated>
+    </task>
+    <task id="LOCAL-00005" summary="innit: start project on Docker">
+      <option name="closed" value="true" />
+      <created>1712006929513</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1712006929513</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,6 +214,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="innit: initialization my project" />
-    <option name="LAST_COMMIT_MESSAGE" value="innit: initialization my project" />
+    <MESSAGE value="innit: start project on Docker" />
+    <option name="LAST_COMMIT_MESSAGE" value="innit: start project on Docker" />
   </component>
 </project>
