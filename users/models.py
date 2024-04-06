@@ -1,6 +1,7 @@
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.db import models
 from django.utils import timezone
+from django.utils.translation import gettext_lazy as _
 
 
 class CustomUserManager(BaseUserManager):
@@ -32,6 +33,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     profile_pic = models.ImageField(upload_to='profile_pics/', null=True, blank=True)
     city = models.CharField(max_length=100, null=True)
     about_me = models.TextField(null=True)
+    friends = models.ManyToManyField('self', verbose_name=_("friends"), blank=True)
 
     GENDER_CHOICES = (
         ('M', 'Male'),

@@ -20,7 +20,7 @@
                 <li><a href="{% url 'login' %}">Login</a></li>
                 
                 <li>
-                    <form action="{% url 'logout' %}" method="post">
+                    <form action="{% url 'logout2' %}" method="post">
                         {% csrf_token %}
                             <button type="submit">Logout</button>
                     </form> 

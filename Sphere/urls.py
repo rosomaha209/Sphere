@@ -17,16 +17,24 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from rest_framework_simplejwt.views import TokenObtainPairView
 
-
-from users.views import UserRegisterView, UserLoginView, UserLogoutView, UserProfileView, UserEditView
+from users.views import UserRegisterView, UserLoginView, UserLogoutView, UserProfileView, UserEditView, LogoutAPIView
 
 urlpatterns = [
+    path('', UserProfileView.as_view(), name='profile'),
     path('admin/', admin.site.urls),
     path('register/', UserRegisterView.as_view(), name='register'),
     path('login/', UserLoginView.as_view(), name='login'),
-    path('logout/', UserLogoutView.as_view(), name='logout'),
+    path('logout2/', UserLogoutView.as_view(), name='logout2'),
+    path('logout/', LogoutAPIView.as_view(), name='logout'),
+
     path('profile/', UserProfileView.as_view(), name='profile'),
     path('edit-profile/', UserEditView.as_view(), name='edit-profile'),
+    path('users/', include('users.urls')),
+    path('messaging/', include('messaging.urls')),
+    path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('token/refresh/', TokenObtainPairView.as_view(), name='token_refresh'),
+    path('token/verify/', TokenObtainPairView.as_view(), name='token_verify'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
