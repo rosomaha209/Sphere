@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.db import models
 from django.utils import timezone
@@ -11,13 +12,13 @@ class CustomUserManager(BaseUserManager):
         email = self.normalize_email(email)
         user = self.model(email=email, **extra_fields)
         user.set_password(password)
+        user.profile_pic = 'images/no_foto.jpg'  # Вказуємо шлях до зображення за замовчуванням
         user.save(using=self._db)
         return user
 
     def create_superuser(self, email, password=None, **extra_fields):
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_superuser', True)
-
         return self.create_user(email, password, **extra_fields)
 
 
@@ -30,7 +31,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     date_joined = models.DateTimeField(default=timezone.now)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
-    profile_pic = models.ImageField(upload_to='profile_pics/', null=True, blank=True)
+    profile_pic = models.ImageField(upload_to='profile_pics/', null=True, blank=True, default='images/no_foto.jpg')
     city = models.CharField(max_length=100, null=True)
     about_me = models.TextField(null=True)
     friends = models.ManyToManyField('self', verbose_name=_("friends"), blank=True)
@@ -49,3 +50,8 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.email
+
+    def get_profile_pic(self):
+        if self.profile_pic:
+            return f'{settings.MEDIA_URL}{self.profile_pic.url}'
+        return None

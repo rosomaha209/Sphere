@@ -1,4 +1,5 @@
 from rest_framework import viewsets
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
 from .serializers import MessageSerializer, ChatSerializer, CustomUserSerializer
@@ -11,7 +12,16 @@ from messaging.models import Chat, Message
 class ChatViewSet(viewsets.ModelViewSet):
     queryset = Chat.objects.all()
     serializer_class = ChatSerializer
+    permission_classes = [IsAuthenticated]  # Забезпечуємо доступ тільки аутентифікованим користувачам
 
+    def get_queryset(self):
+        """
+        Цей метод повертає запити (queryset), які містять тільки чати, учасником яких є поточний користувач.
+        """
+        # Поточний користувач береться з запиту
+        current_user = self.request.user
+        # Фільтрація чатів, де поточний користувач є учасником
+        return Chat.objects.filter(participants=current_user)
 
 class MessageViewSet(viewsets.ModelViewSet):
     queryset = Message.objects.all()

@@ -4,42 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2122fdaa-686b-458f-a4e4-5995bdd33a87" name="Changes" comment="feat add user app">
-      <change afterPath="$PROJECT_DIR$/messaging-ui/src/api/axiosConfig.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging-ui/src/components/ChatPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging-ui/src/components/HomePage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging-ui/src/components/LoginComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging-ui/src/components/LogoutComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging-ui/src/components/MessagePage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging-ui/src/components/PrivateRoute.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging-ui/src/components/RegisterComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging/migrations/0002_chat_name.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging/migrations/0003_alter_message_author_alter_message_chat.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/migrations/0005_customuser_friends.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
+    <list default="true" id="2122fdaa-686b-458f-a4e4-5995bdd33a87" name="Changes" comment="feat: add react authorization with JWT token">
+      <change afterPath="$PROJECT_DIR$/messaging-ui/src/Layout.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-ui/src/components/EditProfileComponent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-ui/src/components/UserProfile.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-ui/src/components/UserProfileComponent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/migrations/0006_alter_customuser_profile_pic.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sphere/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sphere/asgi.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sphere/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sphere/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sphere/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sphere/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-ui/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/messaging-ui/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-ui/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/messaging/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/messaging/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/ChatPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/ChatPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/HomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/MessagePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/MessagePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/RegisterComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/RegisterComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/messaging/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/messaging/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/messaging/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/messaging/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/form-toggles.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/form-toggles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,14 +42,12 @@
     &quot;assignee&quot;: &quot;rosomaha209&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="971df2cf-bb22-453c-a011-45e4e33b8cbc" />
-        <option name="url" value="https://github.com/rosomaha209/Sphere.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/rosomaha209/Sphere.git&quot;,
+    &quot;accountId&quot;: &quot;971df2cf-bb22-453c-a011-45e4e33b8cbc&quot;
+  }
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -81,37 +62,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Django Server.Sphere.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
-    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR_AND_PREVIEW&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/rosom/PycharmProjects/Sphere&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Django Server.Sphere.executor": "Run",
+    "Node.js.RegisterComponent.js.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
+    "django.template.preview.state": "SHOW_EDITOR_AND_PREVIEW",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/rosom/PycharmProjects/Sphere/media",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.updates",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\PyCharm 2023.3.5\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\rosom\PycharmProjects\Sphere\media" />
       <recent name="C:\Users\rosom\PycharmProjects\Sphere" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\rosom\PycharmProjects\Sphere\media\images" />
       <recent name="C:\Users\rosom\PycharmProjects\Sphere\static\images" />
       <recent name="C:\Users\rosom\PycharmProjects\Sphere" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Node.js.RegisterComponent.js">
+    <configuration name="RegisterComponent.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/messaging-ui/src/components/RegisterComponent.js" working-dir="$PROJECT_DIR$/messaging-ui/src/components">
+      <method v="2" />
+    </configuration>
     <configuration name="Sphere" type="Python.DjangoServer" factoryName="Django server">
       <module name="Sphere" />
       <option name="ENV_FILES" value="" />
@@ -137,11 +125,17 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.RegisterComponent.js" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-09665e90c3a7-b11f5e8da5ad-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.15026.15" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-PY-241.14494.241" />
+        <option value="bundled-python-sdk-0509580d9d50-28c9f5db9ffe-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.14494.241" />
       </set>
     </attachedChunks>
   </component>
@@ -164,7 +158,16 @@
       <workItem from="1712337660927" duration="2476000" />
       <workItem from="1712392012566" duration="15001000" />
       <workItem from="1712411641887" duration="670000" />
-      <workItem from="1712414528894" duration="22056000" />
+      <workItem from="1712414528894" duration="22454000" />
+      <workItem from="1712474926141" duration="8624000" />
+      <workItem from="1712597019441" duration="1885000" />
+      <workItem from="1712691293905" duration="73000" />
+      <workItem from="1712691378041" duration="286000" />
+      <workItem from="1712691764189" duration="66000" />
+      <workItem from="1712851112948" duration="328000" />
+      <workItem from="1712851454121" duration="3947000" />
+      <workItem from="1712987621314" duration="108000" />
+      <workItem from="1712990584379" duration="17461000" />
     </task>
     <task id="LOCAL-00001" summary="innit: initialization my project">
       <option name="closed" value="true" />
@@ -214,7 +217,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712399966196</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="feat: add react authorization with JWT token">
+      <option name="closed" value="true" />
+      <created>1712439843257</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1712439843257</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,6 +236,7 @@
     <MESSAGE value="innit: initialization my project" />
     <MESSAGE value="innit: start project on Docker" />
     <MESSAGE value="feat add user app" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat add user app" />
+    <MESSAGE value="feat: add react authorization with JWT token" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add react authorization with JWT token" />
   </component>
 </project>

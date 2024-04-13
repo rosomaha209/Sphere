@@ -4,19 +4,25 @@ import { Link } from 'react-router-dom';
 
 function ChatPage() {
   const [chats, setChats] = useState([]);
+  const [error, setError] = useState(null);
+console.log('Rendering ChatPage', chats);
 
   useEffect(() => {
-    async function fetchChats() {
+    const fetchChats = async () => {
       try {
         const response = await axios.get('http://localhost:8000/messaging/chats/');
         setChats(response.data);
       } catch (error) {
         console.error('Failed to fetch chats:', error);
+        setError('Failed to fetch chats');
       }
-    }
-
+    };
     fetchChats();
   }, []);
+
+  if (error) {
+    return <p>{error}</p>;
+  }
 
   return (
     <div>

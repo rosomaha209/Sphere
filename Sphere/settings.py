@@ -16,7 +16,7 @@ from pathlib import Path
 import environ
 from django.conf import settings
 from django.template.context_processors import static
-
+SITE_URL = 'http://localhost:8000'
 env = environ.Env()
 environ.Env.read_env()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.

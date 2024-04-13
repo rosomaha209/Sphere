@@ -1,51 +1,63 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import { useHistory } from 'react-router-dom';
+import axios from 'axios';  // Переконайтеся, що axios встановлено і правильно налаштовано
+import { useHistory } from 'react-router-dom'; // Використовуйте, якщо потрібен редирект
 
-function RegisterComponent() {
-    const [userData, setUserData] = useState({
-        email: '',
-        password1: '',
-        password2: '',
-        first_name: '',
-        last_name: '',
-        // Додайте інші поля якщо потрібно
-    });
+function FastRegisterComponent() {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
     const history = useHistory();
-
-    const handleChange = (event) => {
-        const { name, value } = event.target;
-        setUserData({...userData, [name]: value});
-    };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        if (userData.password1 !== userData.password2) {
+        if (password !== confirmPassword) {
             alert("Passwords do not match.");
             return;
         }
         try {
-            const response = await axios.post('http://localhost:8000/register/', userData);
+            const response = await axios.post('http://localhost:8000/api-registration/', {
+                email: email,
+                password1: password,
+                password2: confirmPassword,
+            });
             console.log(response.data);
             alert('Registration successful');
-            history.push('/login');  // Перенаправлення на сторінку логіну після успішної реєстрації
+            history.push('/login'); // Перенаправлення на сторінку логіну після успішної реєстрації
         } catch (error) {
-            console.error('Registration failed:', error.response.data);
+            console.error('Registration failed:', error.response?.data || error.message);
             alert('Registration failed');
         }
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input type="email" name="email" value={userData.email} onChange={handleChange} placeholder="Email" required />
-            <input type="password" name="password1" value={userData.password1} onChange={handleChange} placeholder="Password" required />
-            <input type="password" name="password2" value={userData.password2} onChange={handleChange} placeholder="Confirm Password" required />
-            <input type="text" name="first_name" value={userData.first_name} onChange={handleChange} placeholder="First Name" />
-            <input type="text" name="last_name" value={userData.last_name} onChange={handleChange} placeholder="Last Name" />
-            {/* Додайте інші поля форми якщо потрібно */}
-            <button type="submit">Register</button>
-        </form>
+        <div>
+            <h1>Fast Registration</h1>
+            <form onSubmit={handleSubmit}>
+                <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Email"
+                    required
+                />
+                <input
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Password"
+                    required
+                />
+                <input
+                    type="password"
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    placeholder="Confirm Password"
+                    required
+                />
+                <button type="submit">Register</button>
+            </form>
+        </div>
     );
 }
 
-export default RegisterComponent;
+export default FastRegisterComponent;

@@ -20,7 +20,8 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework_simplejwt.views import TokenObtainPairView
 
-from users.views import UserRegisterView, UserLoginView, UserLogoutView, UserProfileView, UserEditView, LogoutAPIView
+from users.views import UserRegisterView, UserLoginView, UserLogoutView, UserProfileView, LogoutAPIView, \
+    CurrentUserView, RegistrationAPIView, UserEditAPIView, UserEditView
 
 urlpatterns = [
     path('', UserProfileView.as_view(), name='profile'),
@@ -37,4 +38,7 @@ urlpatterns = [
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('token/refresh/', TokenObtainPairView.as_view(), name='token_refresh'),
     path('token/verify/', TokenObtainPairView.as_view(), name='token_verify'),
+    path('users/current/', CurrentUserView.as_view(), name='current-user'),
+    path('api-registration/', RegistrationAPIView.as_view(), name='api-registration'),
+    path('api-edit-profile/', UserEditAPIView.as_view(), name='api-edit-profile'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

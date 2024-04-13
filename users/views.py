@@ -5,7 +5,7 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import reverse_lazy
 from django.views import generic
 from django.views.generic import TemplateView, UpdateView
-from rest_framework import viewsets, status
+from rest_framework import viewsets, status, permissions, generics
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -23,15 +23,11 @@ class RegistrationAPIView(APIView):
         serializer = CustomUserSerializer(data=request.data)
         if serializer.is_valid():
             user = serializer.save()
-            refresh = RefreshToken.for_user(user)  # Создание Refesh и Access
-            refresh.payload.update({  # Полезная информация в самом токене
-                'user_id': user.id,
-                'username': user.username
-            })
             return Response({
-                'refresh': str(refresh),
-                'access': str(refresh.access_token),  # Отправка на клиент
+                'user_id': user.id,
+                'email': user.email,
             }, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class LoginAPIView(APIView):
@@ -72,6 +68,25 @@ class LogoutAPIView(APIView):
         return Response({'success': 'Выход успешен'}, status=status.HTTP_200_OK)
 
 
+class UserEditAPIView(generics.RetrieveUpdateAPIView):
+    queryset = CustomUser.objects.all()
+    serializer_class = CustomUserSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_object(self):
+        """
+        Перевизначаємо метод, щоб користувачі могли редагувати тільки свій профіль.
+        """
+        return self.request.user
+
+    def partial_update(self, request, *args, **kwargs):
+        print('працює вюха редагування')
+        print(request.FILES)  # Це покаже файли, що надійшли
+        print(request.data)  # Логування вхідних даних
+        kwargs['partial'] = True  # Вказуємо, що оновлення буде частковим
+        return self.update(request, *args, **kwargs)
+
+
 class UserProfileView(LoginRequiredMixin, TemplateView):
     template_name = 'users/profile.html'
 
@@ -89,6 +104,32 @@ class UserEditView(LoginRequiredMixin, UpdateView):
 
     def get_object(self):
         return self.request.user
+
+
+class CurrentUserView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        serializer = CustomUserSerializer(request.user)
+        return Response(serializer.data)
+
+
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = CustomUser.objects.all()
+    serializer_class = CustomUserSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_object(self):
+        # Припускаємо, що кожен користувач може редагувати лише свій профіль
+        return self.request.user
+
+    def update(self, request, *args, **kwargs):
+        instance = self.get_object()
+        serializer = self.get_serializer(instance, data=request.data, partial=True)
+        if serializer.is_valid(raise_exception=True):
+            self.perform_update(serializer)
+            return Response(serializer.data)
+        return Response(serializer.errors, status=400)
 
 
 class CustomUserViewSet(viewsets.ModelViewSet):
