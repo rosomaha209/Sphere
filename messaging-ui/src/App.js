@@ -8,7 +8,7 @@ import PrivateRoute from './components/PrivateRoute';
 import ChatPage from "./components/ChatPage";
 import Layout from "./Layout";
 import EditProfileComponent from "./components/EditProfileComponent";
-import Messages from "./components/MessagePage";
+import Messages from "./components/messages/Messages";
 
 function App() {
   return (

@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import { jwtDecode } from 'jwt-decode';
+
+
 
 function LoginComponent() {
     const [credentials, setCredentials] = useState({ email: '', password: '' });
-    const history = useHistory();  // Хук для доступу до історії браузера
+    const history = useHistory();
 
     const handleChange = (e) => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value });
@@ -14,12 +17,21 @@ function LoginComponent() {
         e.preventDefault();
         try {
             const response = await axios.post('http://localhost:8000/token/', credentials);
-            localStorage.setItem('access', response.data.access);  // Збереження access токена
-            localStorage.setItem('refresh', response.data.refresh); // Збереження refresh токена
-            history.push('/home');  // Перенаправлення на домашню сторінку
+            const { access, refresh } = response.data;
+
+            localStorage.setItem('access', access);
+            localStorage.setItem('refresh', refresh);
+
+            // Декодування access токена для отримання userId
+            const decoded = jwtDecode(access);
+            if (decoded.user_id) {
+                localStorage.setItem('userId', decoded.user_id.toString());
+                history.push('/home');
+            } else {
+                console.error('UserId not found in token');
+            }
         } catch (error) {
-            console.error('Login failed:', error.response.data);
-            // Тут можна додати повідомлення про помилку логіну
+            console.error('Login failed:', error.response ? error.response.data : 'No response from server');
         }
     };
 

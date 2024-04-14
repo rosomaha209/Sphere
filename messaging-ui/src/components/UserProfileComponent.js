@@ -5,7 +5,7 @@ import './UserProfile.css';
 
 function UserProfileComponent() {
     const [userData, setUserData] = useState(null);
-    const baseUrl = 'http://localhost:8000'; // Ваш базовий URL сервера
+
 
     useEffect(() => {
         const fetchUserData = async () => {

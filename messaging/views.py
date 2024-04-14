@@ -1,4 +1,4 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, status
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
@@ -22,6 +22,20 @@ class ChatViewSet(viewsets.ModelViewSet):
         current_user = self.request.user
         # Фільтрація чатів, де поточний користувач є учасником
         return Chat.objects.filter(participants=current_user)
+
+    @action(detail=True, methods=['get'])
+    def participants(self, request, pk=None):
+        """
+        Повертає список учасників для чату.
+        """
+        try:
+            chat = Chat.objects.get(pk=pk)  # Замініть get_object_or_404 на get для кращого контролю над помилками
+            participants = chat.participants.all()
+            serializer = CustomUserSerializer(participants, many=True)
+            return Response(serializer.data)
+        except Chat.DoesNotExist:
+            return Response({"error": "Chat not found"}, status=status.HTTP_404_NOT_FOUND)
+
 
 class MessageViewSet(viewsets.ModelViewSet):
     queryset = Message.objects.all()

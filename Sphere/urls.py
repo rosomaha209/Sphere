@@ -21,7 +21,7 @@ from django.urls import path, include
 from rest_framework_simplejwt.views import TokenObtainPairView
 
 from users.views import UserRegisterView, UserLoginView, UserLogoutView, UserProfileView, LogoutAPIView, \
-    CurrentUserView, RegistrationAPIView, UserEditAPIView, UserEditView
+    CurrentUserView, RegistrationAPIView, UserEditAPIView, UserEditView, LoginAPIView
 
 urlpatterns = [
     path('', UserProfileView.as_view(), name='profile'),
@@ -41,4 +41,5 @@ urlpatterns = [
     path('users/current/', CurrentUserView.as_view(), name='current-user'),
     path('api-registration/', RegistrationAPIView.as_view(), name='api-registration'),
     path('api-edit-profile/', UserEditAPIView.as_view(), name='api-edit-profile'),
+    path('api-login/', LoginAPIView.as_view(), name='api-login'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
