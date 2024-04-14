@@ -59,12 +59,12 @@ class LogoutAPIView(APIView):
     permission_classes = [IsAuthenticated]  # Забезпечення доступу тільки для авторизованих користувачів
 
     def post(self, request):
-        refresh_token = request.data.get('refresh_token')  # С клиента нужно отправить refresh token
+        refresh_token = request.data.get('refresh_token')  
         if not refresh_token:
             return Response({'error': 'Необходим Refresh token'}, status=status.HTTP_400_BAD_REQUEST)
         try:
             token = RefreshToken(refresh_token)
-            token.blacklist()  # Добавить его в чёрный список
+            token.blacklist()  
         except TokenError as e:
             return Response({'error': 'Неверный Refresh token'}, status=status.HTTP_400_BAD_REQUEST)
         return Response({'success': 'Выход успешен'}, status=status.HTTP_200_OK)
