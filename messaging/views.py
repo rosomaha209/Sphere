@@ -1,4 +1,5 @@
-from rest_framework import viewsets, status
+from django.contrib.auth import get_user_model
+from rest_framework import viewsets, status, serializers
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
@@ -8,33 +9,44 @@ from django.shortcuts import get_object_or_404
 
 from messaging.models import Chat, Message
 
+User = get_user_model()
+
 
 class ChatViewSet(viewsets.ModelViewSet):
     queryset = Chat.objects.all()
     serializer_class = ChatSerializer
-    permission_classes = [IsAuthenticated]  # Забезпечуємо доступ тільки аутентифікованим користувачам
+    permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
-        """
-        Цей метод повертає запити (queryset), які містять тільки чати, учасником яких є поточний користувач.
-        """
-        # Поточний користувач береться з запиту
         current_user = self.request.user
-        # Фільтрація чатів, де поточний користувач є учасником
-        return Chat.objects.filter(participants=current_user)
+        if current_user.is_superuser:
+            return Chat.objects.all()  # Суперюзер бачить усі чати
+        return Chat.objects.filter(participants=current_user).distinct()
+
+    def perform_create(self, serializer):
+        print("Receiving data for new chat:", self.request.data)  # Логування вхідних даних
+        try:
+            serializer.save(creator=self.request.user)
+            print("Chat created successfully!")
+        except Exception as e:
+            print("Error creating chat:", e)
+            raise serializers.ValidationError({"detail": str(e)})
+
+    def destroy(self, request, *args, **kwargs):
+        instance = self.get_object()
+        if instance.creator == request.user or request.user.is_superuser:
+            self.perform_destroy(instance)
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        else:
+            return Response({"error": "You do not have permission to delete this chat"},
+                            status=status.HTTP_403_FORBIDDEN)
 
     @action(detail=True, methods=['get'])
-    def participants(self, request, pk=None):
-        """
-        Повертає список учасників для чату.
-        """
-        try:
-            chat = Chat.objects.get(pk=pk)  # Замініть get_object_or_404 на get для кращого контролю над помилками
-            participants = chat.participants.all()
-            serializer = CustomUserSerializer(participants, many=True)
-            return Response(serializer.data)
-        except Chat.DoesNotExist:
-            return Response({"error": "Chat not found"}, status=status.HTTP_404_NOT_FOUND)
+    def participants(self, request, *args, **kwargs):
+        chat = self.get_object()  # Використання self.get_object() забезпечує використання вбудованих перевірок доступу
+        participants = chat.participants.all()
+        serializer = CustomUserSerializer(participants, many=True)
+        return Response(serializer.data)
 
 
 class MessageViewSet(viewsets.ModelViewSet):

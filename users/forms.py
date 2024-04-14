@@ -58,4 +58,13 @@ class UserEditForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(UserEditForm, self).__init__(*args, **kwargs)
-        self.fields['email'].disabled = True  # Якщо ви не хочете, щоб email був змінений
+        self.fields['email'].disabled = True
+        # Встановлення поля як необов'язкового
+        self.fields['first_name'].required = False
+        self.fields['last_name'].required = False
+        self.fields['date_of_birth'].required = False
+        self.fields['phone_number'].required = False
+        self.fields['profile_pic'].required = False
+        self.fields['gender'].required = False
+        self.fields['city'].required = False
+        self.fields['about_me'].required = False

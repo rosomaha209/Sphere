@@ -7,6 +7,7 @@ class Chat(models.Model):
     participants = models.ManyToManyField(CustomUser, related_name='chats')
     name = models.CharField(max_length=255, blank=True, null=True)  # Додано поле для назви чату
     created_at = models.DateTimeField(auto_now_add=True)
+    creator = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='created_chats')
 
     def __str__(self):
         return self.name if self.name else "{}".format(self.pk)

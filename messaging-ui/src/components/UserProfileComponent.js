@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from '../api/axiosConfig';
-import './UserProfile.css';
+import '../styles/UserProfile.css';
 
 
 function UserProfileComponent() {

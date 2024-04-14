@@ -47,7 +47,7 @@ class LoginAPIView(APIView):
             'user_id': user.id,
             'username': user.username
         })
-        print(user.id,"user id")
+        print(user.id, "user id")
         return Response({
             'refresh': str(refresh),
             'access': str(refresh.access_token),
@@ -59,12 +59,12 @@ class LogoutAPIView(APIView):
     permission_classes = [IsAuthenticated]  # Забезпечення доступу тільки для авторизованих користувачів
 
     def post(self, request):
-        refresh_token = request.data.get('refresh_token')  # С клиента нужно отправить refresh token
+        refresh_token = request.data.get('refresh_token')
         if not refresh_token:
             return Response({'error': 'Необходим Refresh token'}, status=status.HTTP_400_BAD_REQUEST)
         try:
             token = RefreshToken(refresh_token)
-            token.blacklist()  # Добавить его в чёрный список
+            token.blacklist()
         except TokenError as e:
             return Response({'error': 'Неверный Refresh token'}, status=status.HTTP_400_BAD_REQUEST)
         return Response({'success': 'Выход успешен'}, status=status.HTTP_200_OK)
@@ -81,12 +81,13 @@ class UserEditAPIView(generics.RetrieveUpdateAPIView):
         """
         return self.request.user
 
-    def partial_update(self, request, *args, **kwargs):
-        print('працює вюха редагування')
-        print(request.FILES)  # Це покаже файли, що надійшли
-        print(request.data)  # Логування вхідних даних
-        kwargs['partial'] = True  # Вказуємо, що оновлення буде частковим
-        return self.update(request, *args, **kwargs)
+    def update(self, request, *args, **kwargs):
+        kwargs['partial'] = kwargs.get('partial', request.method == 'PATCH')
+        if kwargs['partial']:
+            print('працює часткове оновлення')
+            print(request.FILES)  # Логування файлів, що надійшли
+            print(request.data)  # Логування вхідних даних
+        return super().update(request, *args, **kwargs)
 
 
 class UserProfileView(LoginRequiredMixin, TemplateView):
@@ -137,6 +138,13 @@ class UserViewSet(viewsets.ModelViewSet):
 class CustomUserViewSet(viewsets.ModelViewSet):
     queryset = CustomUser.objects.all()
     serializer_class = CustomUserSerializer
+
+    def get_queryset(self):
+        return CustomUser.objects.all()
+
+    def partial_update(self, request, *args, **kwargs):
+        kwargs['partial'] = True
+        return self.update(request, *args, **kwargs)
 
 
 class UserRegisterView(generic.CreateView):

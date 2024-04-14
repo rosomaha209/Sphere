@@ -1,6 +1,8 @@
 from django.conf import settings
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.db import models
+from django.db.models.signals import m2m_changed
+from django.dispatch import receiver
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
@@ -34,7 +36,6 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     profile_pic = models.ImageField(upload_to='profile_pics/', null=True, blank=True, default='images/no_foto.jpg')
     city = models.CharField(max_length=100, null=True)
     about_me = models.TextField(null=True)
-    friends = models.ManyToManyField('self', verbose_name=_("friends"), blank=True)
 
     GENDER_CHOICES = (
         ('M', 'Male'),
@@ -55,3 +56,5 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         if self.profile_pic:
             return f'{settings.MEDIA_URL}{self.profile_pic.url}'
         return None
+
+
