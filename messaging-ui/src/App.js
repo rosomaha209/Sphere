@@ -10,6 +10,9 @@ import Layout from "./Layout";
 import EditProfileComponent from "./components/EditProfileComponent";
 import Messages from "./components/messages/Messages";
 import {AuthProvider} from "./components/logistrations/AuthContext";
+import NewsFeed from "./components/posts/NewsFeed";
+import PostPage from "./components/posts/PostPage";
+import CreatePostForm from "./components/posts/CreatePostForm";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -30,6 +33,10 @@ function App() {
           <PrivateRoute path="/chats" component={ChatPage} isLoggedIn={isLoggedIn} />
           <PrivateRoute path="/chat/:chatId" component={Messages} isLoggedIn={isLoggedIn} />
           <PrivateRoute path="/home" component={HomePage} isLoggedIn={isLoggedIn} />
+          <PrivateRoute path="/news-feed" component={NewsFeed} />
+          <PrivateRoute path="/posts/:postId" component={PostPage} />
+          <PrivateRoute path="/create-post" component={CreatePostForm} />
+
           <Redirect from="/" exact to="/home" />
           {/* Додайте інші маршрути, якщо потрібно */}
         </Switch>

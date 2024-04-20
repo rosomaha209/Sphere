@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import ChatList from './ChatList';
 import CreateChatForm from './CreateChatForm';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function ChatPage() {
   const [chats, setChats] = useState([]);
@@ -27,16 +28,13 @@ function ChatPage() {
   }, []);
 
   const handleCreateChat = async (chatName, participants) => {
-    console.log("Creating chat with name:", chatName, "and participants:", participants);
     try {
       const response = await axios.post('http://localhost:8000/messaging/chats/', {
         name: chatName,
         participants
-
       });
-      console.log(participants)
-      history.push(`/chat/${response.data.id}`); // Navigate to the new chat page
-      setChats([...chats, response.data]); // Optionally update chat list locally
+      history.push(`/chat/${response.data.id}`);
+      setChats([...chats, response.data]);
     } catch (error) {
       console.error('Failed to create chat:', error);
     }
@@ -52,11 +50,11 @@ function ChatPage() {
   };
 
   if (error) {
-    return <p>{error}</p>;
+    return <p className="alert alert-danger">{error}</p>;
   }
 
   return (
-    <div>
+    <div className="container mt-4">
       <h1>Chat List</h1>
       <ChatList chats={chats} onChatsUpdated={onChatsUpdated} />
       <h2>Create New Chat</h2>

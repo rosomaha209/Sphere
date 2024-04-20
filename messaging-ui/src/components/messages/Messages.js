@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import MessageList from './MessageList';
 import ParticipantList from './ParticipantList';
 import SendMessageForm from './SendMessageForm';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Messages() {
     const { chatId } = useParams();
@@ -43,7 +44,7 @@ function Messages() {
                 content: newMessage
             };
             const response = await axios.post('http://localhost:8000/messaging/messages/', postData);
-            setMessages([...messages, response.data]); // Додає нове повідомлення до списку без перезавантаження
+            setMessages([...messages, response.data]);
         } catch (error) {
             console.error('Failed to send message:', error);
             alert('Failed to send message');
@@ -51,20 +52,20 @@ function Messages() {
     };
 
     if (isLoading) {
-        return <p>Loading messages...</p>;
+        return <p className="text-center">Loading messages...</p>;
     }
 
     if (error) {
-        return <p>{error}</p>;
+        return <p className="alert alert-danger">{error}</p>;
     }
 
     return (
-        <div>
-            <h2>Chat Messages</h2>
-            <MessageList messages={messages} fetchMessages={fetchData} />
-            <h3>Participants</h3>
-            <ParticipantList participants={participants} />
-            <SendMessageForm onSendMessage={handleSendMessage} />
+        <div className="container mt-3">
+            <h3 className="mt-4">Participants</h3>
+            <ParticipantList participants={participants}/>
+            <h2 className="mb-3">Chat Messages</h2>
+            <MessageList messages={messages} fetchMessages={fetchData}/>
+            <SendMessageForm onSendMessage={handleSendMessage}/>
         </div>
     );
 }

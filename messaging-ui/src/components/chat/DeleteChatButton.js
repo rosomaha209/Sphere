@@ -1,8 +1,9 @@
 import React from 'react';
 import axios from 'axios';
+import 'bootstrap-icons/font/bootstrap-icons.css'; // Імпортуємо стилі Bootstrap Icons
 
 const DeleteChatButton = ({ chatId, creatorId, isSuperuser, onChatsUpdated }) => {
-    const currentUserId = localStorage.getItem('userId'); // Витягування ID поточного користувача
+    const currentUserId = localStorage.getItem('userId');
 
     const handleDelete = async () => {
         if (currentUserId === creatorId.toString() || isSuperuser) {
@@ -22,8 +23,18 @@ const DeleteChatButton = ({ chatId, creatorId, isSuperuser, onChatsUpdated }) =>
     };
 
     return (
-        <button onClick={handleDelete} disabled={!(currentUserId === creatorId.toString() || isSuperuser)}>
-            Delete Chat
+        <button
+            onClick={handleDelete}
+            disabled={!(currentUserId === creatorId.toString() || isSuperuser)}
+            className="btn btn-link btn-sm text-decoration-none"
+            style={{
+                color: 'red',
+                padding: 0,
+                border: 'none',
+                backgroundColor: 'transparent'
+            }}
+        >
+            <i className="bi bi-x-lg"></i>
         </button>
     );
 };

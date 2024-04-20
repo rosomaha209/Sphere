@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import 'bootstrap-icons/font/bootstrap-icons.css'; // Імпортуйте Bootstrap іконки
 
 const DeleteMessageButton = ({ messageId, authorId, fetchMessages }) => {
     const currentUserId = localStorage.getItem('userId'); // Завжди рядок
@@ -23,8 +24,9 @@ const DeleteMessageButton = ({ messageId, authorId, fetchMessages }) => {
     return (
         <>
             {canDelete && (
-                <button onClick={handleDelete} style={{ marginLeft: '10px' }}>
-                    Delete
+                <button onClick={handleDelete} className="btn btn-sm"
+                        style={{marginLeft: '10px', backgroundColor: 'transparent', color: 'red', border: 'none'}}>
+                    <i className="bi bi-x-lg"></i>
                 </button>
             )}
         </>

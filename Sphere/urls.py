@@ -35,6 +35,7 @@ urlpatterns = [
     path('edit-profile/', UserEditView.as_view(), name='edit-profile'),
     path('users/', include('users.urls')),
     path('messaging/', include('messaging.urls')),
+    path('posts/', include('posts.urls')),
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('token/refresh/', TokenObtainPairView.as_view(), name='token_refresh'),
     path('token/verify/', TokenObtainPairView.as_view(), name='token_verify'),
@@ -42,4 +43,5 @@ urlpatterns = [
     path('api-registration/', RegistrationAPIView.as_view(), name='api-registration'),
     path('api-edit-profile/', UserEditAPIView.as_view(), name='api-edit-profile'),
     path('api-login/', LoginAPIView.as_view(), name='api-login'),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
