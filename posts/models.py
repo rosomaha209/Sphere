@@ -20,5 +20,5 @@ class Like(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='likes')
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='likes')
 
-    # class Meta:
-    #     unique_together = ('post', 'user')  # Унікальне обмеження для пари пост-користувач
+    class Meta:
+        unique_together = ('post', 'user')  # Унікальне обмеження для пари пост-користувач

@@ -7,6 +7,7 @@ router.register(r'posts', views.PostViewSet)
 router.register(r'comments', views.CommentViewSet)
 router.register(r'likes', views.LikeViewSet)
 
+
 urlpatterns = [
     path('', include(router.urls)),
 ]

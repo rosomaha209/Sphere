@@ -1,0 +1,20 @@
+.like-button {
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    color: #555; /* базовий колір тексту */
+    cursor: pointer; /* додає вказівник на всі елементи у контейнері */
+}
+
+.like-button .bi-heart {
+    color: #ccc; /* базовий колір сердечка */
+}
+
+.like-button .bi-heart-fill {
+    color: red; /* колір сердечка при "лайк" */
+}
+
+.like-button:hover .bi-heart,
+.like-button:hover .bi-heart-fill {
+    color: darkred; /* колір сердечка при наведенні */
+}

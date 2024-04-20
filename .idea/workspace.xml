@@ -4,35 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2122fdaa-686b-458f-a4e4-5995bdd33a87" name="Changes" comment="Merge remote-tracking branch 'Sphere/master'">
-      <change afterPath="$PROJECT_DIR$/messaging-ui/src/components/posts/CommentList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging-ui/src/components/posts/CreatePostForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging-ui/src/components/posts/LikeButton.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging-ui/src/components/posts/NewsFeed.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging-ui/src/components/posts/Post.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging-ui/src/components/posts/PostPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/posts/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/posts/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/migrations/0007_remove_customuser_friends.py" afterDir="false" />
+    <list default="true" id="2122fdaa-686b-458f-a4e4-5995bdd33a87" name="Changes" comment="feat: create post">
+      <change afterPath="$PROJECT_DIR$/messaging-ui/src/styles/LikeButton.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nginx.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/posts/migrations/0006_alter_like_unique_together.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sphere/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sphere/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sphere/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sphere/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-ui/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-ui/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-ui/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-ui/src/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/Layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/UserProfileComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/UserProfileComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/chat/ChatList.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/chat/ChatList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/chat/ChatPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/chat/ChatPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/chat/CreateChatForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/chat/CreateChatForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/chat/DeleteChatButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/chat/DeleteChatButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/messages/DeleteMessageButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/messages/DeleteMessageButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/messages/MessageList.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/messages/MessageList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/messages/Messages.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/messages/Messages.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/messages/ParticipantList.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/messages/ParticipantList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/messages/SendMessageForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/messages/SendMessageForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/posts/LikeButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/posts/LikeButton.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/posts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/posts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/posts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,29 +52,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Django Server.Sphere.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.RegisterComponent.js.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
-    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR_AND_PREVIEW&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/rosom/PycharmProjects/Sphere/media&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.updates&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\PyCharm 2023.3.5\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Django Server.Sphere.executor": "Run",
+    "Node.js.RegisterComponent.js.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
+    "django.template.preview.state": "SHOW_EDITOR_AND_PREVIEW",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/rosom/PycharmProjects/Sphere/media",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "ml.llm.LLMConfigurable",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\PyCharm 2023.3.5\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\rosom\PycharmProjects\Sphere\media" />
@@ -184,7 +169,8 @@
       <workItem from="1713088841204" duration="30540000" />
       <workItem from="1713200984230" duration="7793000" />
       <workItem from="1713544399107" duration="1044000" />
-      <workItem from="1713614236637" duration="16886000" />
+      <workItem from="1713614236637" duration="17071000" />
+      <workItem from="1713646183624" duration="8480000" />
     </task>
     <task id="LOCAL-00001" summary="innit: initialization my project">
       <option name="closed" value="true" />
@@ -266,7 +252,23 @@
       <option name="project" value="LOCAL" />
       <updated>1713126772786</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="feat: create post">
+      <option name="closed" value="true" />
+      <created>1713637433421</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1713637433421</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feat: create post">
+      <option name="closed" value="true" />
+      <created>1713637444606</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1713637444606</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,6 +283,7 @@
     <MESSAGE value="feat: create edit profile component" />
     <MESSAGE value="feat: create DeleteMessageButton" />
     <MESSAGE value="Merge remote-tracking branch 'Sphere/master'" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'Sphere/master'" />
+    <MESSAGE value="feat: create post" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: create post" />
   </component>
 </project>

@@ -44,4 +44,5 @@ urlpatterns = [
     path('api-edit-profile/', UserEditAPIView.as_view(), name='api-edit-profile'),
     path('api-login/', LoginAPIView.as_view(), name='api-login'),
 
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
