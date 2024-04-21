@@ -1,37 +1,32 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import 'bootstrap-icons/font/bootstrap-icons.css'; // Імпорт стилів іконок
-
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import '../../styles/LikeButton.css';
 
 const LikeButton = ({ postId }) => {
   const [likes, setLikes] = useState(0);
   const [liked, setLiked] = useState(false);
 
-  const fetchLikes = useCallback(async () => {
+  const fetchLikeStatus = async () => {
     try {
-      const response = await axios.get(`http://127.0.0.1:8000/posts/likes/?post_id=${postId}`);
-      const response2 = await axios.get(`http://127.0.0.1:8000/posts/likes/check/?post_id=${postId}`);
-      setLikes(response.data.length);
-      setLiked(response2.data.liked);  // Перевірте, що сервер дійсно повертає це поле
-      console.log("Liked by user:", response2.data.liked);
+      const response = await axios.get(`http://127.0.0.1:8000/posts/likes/like_status/?post_id=${postId}`);
+      setLikes(response.data.likesCount);
+      setLiked(response.data.liked);
     } catch (error) {
-      console.error('Error fetching likes:', error);
+      console.error('Error fetching like status:', error);
       setLikes(0);
       setLiked(false);
     }
-  }, [postId]);
+  };
 
   useEffect(() => {
-    fetchLikes();
-  }, [fetchLikes]);
+    fetchLikeStatus();
+  }, [postId]);
 
   const toggleLike = async () => {
     try {
-      // Тільки виконуємо зміну статусу лайка
-      await axios.post('http://127.0.0.1:8000/posts/likes/toggle/', { post_id: postId });
-      // Потім перезавантажуємо дані
-      fetchLikes();
+      await axios.post('http://127.0.0.1:8000/posts/likes/like_status/', { post_id: postId });
+      fetchLikeStatus();
     } catch (error) {
       console.error('Error toggling like:', error);
     }

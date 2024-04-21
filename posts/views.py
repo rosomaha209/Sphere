@@ -28,39 +28,31 @@ class LikeViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         queryset = super().get_queryset()
         post_id = self.request.query_params.get('post_id')
-        if post_id is not None:
+        if post_id:
             queryset = queryset.filter(post__id=post_id)
         return queryset
 
-    @action(detail=False, methods=['post'], url_path='toggle')
-    def toggle_like(self, request):
-        post_id = request.data.get('post_id')
-        user = request.user
-
+    @action(detail=False, methods=['get', 'post'], url_path='like_status')
+    def like_status(self, request):
+        post_id = request.query_params.get('post_id') if request.method == 'GET' else request.data.get('post_id')
         if not post_id:
             return Response({"message": "Post ID is required"}, status=status.HTTP_400_BAD_REQUEST)
 
-        # Перевірка, чи пост з таким ID існує
         post = get_object_or_404(Post, id=post_id)
-
-        try:
-            like = Like.objects.get(post=post, user=user)
-            like.delete()
-            return Response({"message": "Like removed"}, status=status.HTTP_204_NO_CONTENT)
-        except Like.DoesNotExist:
-            Like.objects.create(post=post, user=user)
-            return Response({"message": "Like added"}, status=status.HTTP_201_CREATED)
-
-    @action(detail=False, methods=['get'], url_path='check')
-    def check_like(self, request):
-        post_id = request.query_params.get('post_id')
-        if not post_id:
-            return Response({"message": "Post ID is required"}, status=status.HTTP_400_BAD_REQUEST)
-
         user = request.user
 
-        # Перевірка, чи пост з таким ID існує
-        post = get_object_or_404(Post, id=post_id)
+        if request.method == 'POST':
+            try:
+                like = Like.objects.get(post=post, user=user)
+                like.delete()
+                message = "Like removed"
+            except Like.DoesNotExist:
+                Like.objects.create(post=post, user=user)
+                message = "Like added"
+            likes_count = Like.objects.filter(post=post).count()
+            liked = not Like.objects.filter(post=post, user=user).exists()
+            return Response({"message": message, "likesCount": likes_count, "liked": liked})
 
         liked = Like.objects.filter(post=post, user=user).exists()
-        return Response({"liked": liked})
+        likes_count = Like.objects.filter(post=post).count()
+        return Response({"liked": liked, "likesCount": likes_count})
