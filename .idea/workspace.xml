@@ -4,8 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2122fdaa-686b-458f-a4e4-5995bdd33a87" name="Changes" comment="fix: like button">
+    <list default="true" id="2122fdaa-686b-458f-a4e4-5995bdd33a87" name="Changes" comment="fix: like button optimized">
+      <change afterPath="$PROJECT_DIR$/messaging-ui/src/components/posts/CommentsComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/posts/CommentList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/posts/CreatePostForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/posts/CreatePostForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/posts/LikeButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/posts/LikeButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/posts/NewsFeed.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/posts/NewsFeed.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/posts/Post.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/posts/Post.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/posts/PostPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/posts/PostPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/posts/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/posts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +173,7 @@
       <workItem from="1713614236637" duration="17071000" />
       <workItem from="1713646183624" duration="8752000" />
       <workItem from="1713690046058" duration="1115000" />
-      <workItem from="1713711710743" duration="1148000" />
+      <workItem from="1713711710743" duration="14080000" />
     </task>
     <task id="LOCAL-00001" summary="innit: initialization my project">
       <option name="closed" value="true" />
@@ -270,7 +279,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713655018994</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="fix: like button optimized">
+      <option name="closed" value="true" />
+      <created>1713714160871</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1713714160871</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,6 +304,7 @@
     <MESSAGE value="Merge remote-tracking branch 'Sphere/master'" />
     <MESSAGE value="feat: create post" />
     <MESSAGE value="fix: like button" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: like button" />
+    <MESSAGE value="fix: like button optimized" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: like button optimized" />
   </component>
 </project>

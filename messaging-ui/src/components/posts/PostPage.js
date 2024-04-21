@@ -23,6 +23,7 @@ const PostPage = () => {
 
   return (
     <div>
+      <h1>{post.author}</h1>
       <h1>{post.content}</h1>
       {/* Display more details and components related to the post */}
     </div>

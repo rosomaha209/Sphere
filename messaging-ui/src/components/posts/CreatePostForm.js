@@ -1,41 +1,50 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import {useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import 'bootstrap-icons/font/bootstrap-icons.css'; // Переконайтесь, що іконки Bootstrap підключені
 
-const CreatePostForm = () => {
+const CreatePostForm = ({ onPostCreated }) => {
   const [content, setContent] = useState('');
-  const userId = localStorage.getItem('userId');  // Припускаємо, що userId зберігається у localStorage
+  const userId = localStorage.getItem('userId');
   const history = useHistory();
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       const postData = {
         content: content,
-        author: userId  // Передача ID користувача
+        author: userId
       };
-      const response = await axios.post('http://127.0.0.1:8000/posts/posts/', postData, {
+      await axios.post('http://127.0.0.1:8000/posts/posts/', postData, {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem('token')}`  // Додаємо токен авторизації, якщо потрібно
+          Authorization: `Bearer ${localStorage.getItem('token')}`
         }
       });
-      console.log('Post created:', response.data);
       setContent('');
+      onPostCreated();
       history.push('/news-feed');
-      // Optional: Redirect to NewsFeed or update state globally
     } catch (error) {
       console.error('Failed to create post:', error);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="position-relative">
       <textarea
         value={content}
         onChange={(e) => setContent(e.target.value)}
         placeholder="Write something..."
         required
+        className="form-control"
+        style={{paddingRight: '2.5rem'}}
       />
-      <button type="submit">Create Post</button>
+      <button
+        type="submit"
+        className="btn btn-link position-absolute"
+        style={{right: '10px', bottom: '10px', color: '#0d6efd'}}
+      >
+        <i className="bi bi-send-fill"></i>
+      </button>
     </form>
   );
 };

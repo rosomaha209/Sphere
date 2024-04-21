@@ -1,11 +1,7 @@
-from django.http import Http404
 from django.shortcuts import get_object_or_404
 from rest_framework import viewsets, status
 from rest_framework.decorators import action
-from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from rest_framework.views import APIView
-
 from .models import Post, Comment, Like
 from .serializers import PostSerializer, CommentSerializer, LikeSerializer
 
@@ -18,6 +14,20 @@ class PostViewSet(viewsets.ModelViewSet):
 class CommentViewSet(viewsets.ModelViewSet):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
+
+    def perform_create(self, serializer):
+        serializer.save(author=self.request.user)
+
+    def get_queryset(self):
+        """
+        Optionally restricts the returned comments to a given post,
+        by filtering against a `post_id` query parameter in the URL.
+        """
+        queryset = super().get_queryset()
+        post_id = self.request.query_params.get('post_id')
+        if post_id:
+            queryset = queryset.filter(post_id=post_id)
+        return queryset
 
 
 class LikeViewSet(viewsets.ModelViewSet):

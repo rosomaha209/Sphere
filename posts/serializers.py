@@ -1,19 +1,37 @@
 from rest_framework import serializers
 
 from users.models import CustomUser
+from users.serializers import CustomUserSerializer
 from .models import Post, Comment, Like
 
 
 class PostSerializer(serializers.ModelSerializer):
+    author = CustomUserSerializer(read_only=True)  # Використання серіалізатора користувача для поля автора
+
     class Meta:
         model = Post
-        fields = '__all__'
+        fields = ['id', 'author', 'content', 'created_at', 'updated_at']
+        read_only_fields = ['created_at', 'updated_at']  # Автоматичні поля дати створення/оновлення
+
+    def create(self, validated_data):
+        # Припускаємо, що `request.user` доступний через контекст запиту
+        user = self.context['request'].user
+        post = Post.objects.create(author=user, **validated_data)
+        return post
+
+    def update(self, instance, validated_data):
+        instance.content = validated_data.get('content', instance.content)
+        instance.save()
+        return instance
 
 
 class CommentSerializer(serializers.ModelSerializer):
+    author = CustomUserSerializer(read_only=True)  # Додаємо інформацію про автора коментаря
+
     class Meta:
         model = Comment
-        fields = '__all__'
+        fields = ['id', 'post', 'author', 'content', 'created_at']
+        read_only_fields = ['created_at']
 
 
 class LikeSerializer(serializers.ModelSerializer):
