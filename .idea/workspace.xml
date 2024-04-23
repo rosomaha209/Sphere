@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2122fdaa-686b-458f-a4e4-5995bdd33a87" name="Changes" comment="fix: comments">
-      <change afterPath="$PROJECT_DIR$/messaging-ui/src/components/posts/DeleteCommentButton.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging-ui/src/components/posts/DeletePostButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-ui/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/posts/CommentsComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/posts/CommentsComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/posts/Post.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/posts/Post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/posts/PostPage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/admin.py" afterDir="false" />
-    </list>
+    <list default="true" id="2122fdaa-686b-458f-a4e4-5995bdd33a87" name="Changes" comment="feat: add delete comment button and delete post button" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -172,7 +163,7 @@
       <workItem from="1713646183624" duration="8752000" />
       <workItem from="1713690046058" duration="1115000" />
       <workItem from="1713711710743" duration="15025000" />
-      <workItem from="1713810208265" duration="3980000" />
+      <workItem from="1713810208265" duration="4378000" />
     </task>
     <task id="LOCAL-00001" summary="innit: initialization my project">
       <option name="closed" value="true" />
@@ -294,7 +285,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713730101440</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="feat: add delete comment button and delete post button">
+      <option name="closed" value="true" />
+      <created>1713814573095</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1713814573095</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,6 +312,7 @@
     <MESSAGE value="fix: like button" />
     <MESSAGE value="fix: like button optimized" />
     <MESSAGE value="fix: comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: comments" />
+    <MESSAGE value="feat: add delete comment button and delete post button" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add delete comment button and delete post button" />
   </component>
 </project>
