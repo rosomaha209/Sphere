@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2122fdaa-686b-458f-a4e4-5995bdd33a87" name="Changes" comment="feat: add delete comment button and delete post button" />
+    <list default="true" id="2122fdaa-686b-458f-a4e4-5995bdd33a87" name="Changes" comment="fix: push docker file">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/UserProfileComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/UserProfileComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/posts/Post.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/posts/Post.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/serializers.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -164,6 +169,9 @@
       <workItem from="1713690046058" duration="1115000" />
       <workItem from="1713711710743" duration="15025000" />
       <workItem from="1713810208265" duration="4378000" />
+      <workItem from="1713891510508" duration="1096000" />
+      <workItem from="1714488832371" duration="1753000" />
+      <workItem from="1714507030881" duration="4228000" />
     </task>
     <task id="LOCAL-00001" summary="innit: initialization my project">
       <option name="closed" value="true" />
@@ -293,7 +301,23 @@
       <option name="project" value="LOCAL" />
       <updated>1713814573095</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="fix: change gitignore, add dockerfile and docker-compose to whitelist">
+      <option name="closed" value="true" />
+      <created>1713891858310</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1713891858310</updated>
+    </task>
+    <task id="LOCAL-00018" summary="fix: push docker file">
+      <option name="closed" value="true" />
+      <created>1713891908464</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1713891908464</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,6 +337,8 @@
     <MESSAGE value="fix: like button optimized" />
     <MESSAGE value="fix: comments" />
     <MESSAGE value="feat: add delete comment button and delete post button" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add delete comment button and delete post button" />
+    <MESSAGE value="fix: change gitignore, add dockerfile and docker-compose to whitelist" />
+    <MESSAGE value="fix: push docker file" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: push docker file" />
   </component>
 </project>
