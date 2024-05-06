@@ -6,7 +6,7 @@ The `urlpatterns` list routes URLs to views. For more information please see:
 Examples:
 Function views
     1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+    2. Add a URL to urlpatterns:  path('', views. home, name='home')
 Class-based views
     1. Add an import:  from other_app.views import Home
     2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
@@ -20,6 +20,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework_simplejwt.views import TokenObtainPairView
 
+from posts.views import CommentPermissionViewSet
 from users.views import UserRegisterView, UserLoginView, UserLogoutView, UserProfileView, LogoutAPIView, \
     CurrentUserView, RegistrationAPIView, UserEditAPIView, UserEditView, LoginAPIView
 
@@ -43,6 +44,7 @@ urlpatterns = [
     path('api-registration/', RegistrationAPIView.as_view(), name='api-registration'),
     path('api-edit-profile/', UserEditAPIView.as_view(), name='api-edit-profile'),
     path('api-login/', LoginAPIView.as_view(), name='api-login'),
+    path('posts/comment-permissions/', CommentPermissionViewSet.as_view(), name='comment-permissions'),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -37,6 +37,9 @@ class CustomUserSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         password1 = validated_data.pop('password1', None)
+        password2 = validated_data.pop('password2', None)
+        if password1 != password2:
+            raise serializers.ValidationError({"password2": "Passwords must match."})
         user = CustomUser.objects.create(**validated_data)
         if password1:
             user.set_password(password1)
@@ -44,6 +47,4 @@ class CustomUserSerializer(serializers.ModelSerializer):
         return user
 
     def update(self, instance, validated_data):
-        instance = super().update(instance, validated_data)
-        instance.save()
-        return instance
+        return super().update(instance, validated_data)

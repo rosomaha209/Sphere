@@ -22,3 +22,12 @@ class Like(models.Model):
 
     class Meta:
         unique_together = ('post', 'user')  # Унікальне обмеження для пари пост-користувач
+
+
+class CommentPermission(models.Model):
+    target_user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='comment_permissions')
+    can_comment = models.BooleanField(default=True)
+
+    def __str__(self):
+        return f"{self.target_user.email}: {'Can comment' if self.can_comment else 'Cannot comment'}"
+

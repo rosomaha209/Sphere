@@ -2,7 +2,7 @@ from rest_framework import serializers
 
 from users.models import CustomUser
 from users.serializers import CustomUserSerializer
-from .models import Post, Comment, Like
+from .models import Post, Comment, Like, CommentPermission
 
 
 class PostSerializer(serializers.ModelSerializer):
@@ -33,6 +33,13 @@ class CommentSerializer(serializers.ModelSerializer):
         fields = ['id', 'post', 'author', 'content', 'created_at']
         read_only_fields = ['created_at']
 
+
+class CommentPermissionSerializer(serializers.ModelSerializer):
+    target_user = CustomUserSerializer(read_only=True)  # Повертає деталі користувача
+
+    class Meta:
+        model = CommentPermission
+        fields = ['id', 'target_user', 'can_comment']
 
 class LikeSerializer(serializers.ModelSerializer):
     post_id = serializers.PrimaryKeyRelatedField(

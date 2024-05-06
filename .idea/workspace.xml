@@ -4,10 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2122fdaa-686b-458f-a4e4-5995bdd33a87" name="Changes" comment="fix: push docker file">
+    <list default="true" id="2122fdaa-686b-458f-a4e4-5995bdd33a87" name="Changes" comment="fix: image field">
+      <change afterPath="$PROJECT_DIR$/messaging-ui/src/components/PermissionsManager.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-ui/src/components/posts/temp.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/UserProfileComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/UserProfileComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/posts/Post.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/posts/Post.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sphere/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sphere/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sphere/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sphere/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/EditProfileComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/EditProfileComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/posts/CommentsComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/posts/CommentsComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/posts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/posts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/posts/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/posts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/posts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/serializers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -171,7 +181,9 @@
       <workItem from="1713810208265" duration="4378000" />
       <workItem from="1713891510508" duration="1096000" />
       <workItem from="1714488832371" duration="1753000" />
-      <workItem from="1714507030881" duration="4228000" />
+      <workItem from="1714507030881" duration="4532000" />
+      <workItem from="1714566473374" duration="6289000" />
+      <workItem from="1714664944473" duration="30248000" />
     </task>
     <task id="LOCAL-00001" summary="innit: initialization my project">
       <option name="closed" value="true" />
@@ -317,7 +329,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713891908464</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="fix: image field">
+      <option name="closed" value="true" />
+      <created>1714516328197</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1714516328198</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,6 +359,7 @@
     <MESSAGE value="feat: add delete comment button and delete post button" />
     <MESSAGE value="fix: change gitignore, add dockerfile and docker-compose to whitelist" />
     <MESSAGE value="fix: push docker file" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: push docker file" />
+    <MESSAGE value="fix: image field" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: image field" />
   </component>
 </project>

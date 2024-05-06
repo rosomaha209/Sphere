@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import PermissionsManager from "./PermissionsManager";
+
 
 function EditProfileComponent() {
     const [userData, setUserData] = useState({
@@ -104,6 +106,7 @@ function EditProfileComponent() {
                                 </div>
                                 <button type="submit" className="btn btn-primary">Update Profile</button>
                             </form>
+                            <PermissionsManager />
                         </div>
                     </div>
                 </div>

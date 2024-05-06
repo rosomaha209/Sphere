@@ -1,9 +1,16 @@
+from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
+from django.views.decorators.http import require_http_methods
 from rest_framework import viewsets, status
-from rest_framework.decorators import action
+from rest_framework.decorators import action, api_view, permission_classes
+from rest_framework.exceptions import PermissionDenied
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from .models import Post, Comment, Like
-from .serializers import PostSerializer, CommentSerializer, LikeSerializer
+from rest_framework.views import APIView
+
+from users.models import CustomUser
+from .models import Post, Comment, Like, CommentPermission
+from .serializers import PostSerializer, CommentSerializer, LikeSerializer, CommentPermissionSerializer
 
 
 class PostViewSet(viewsets.ModelViewSet):
@@ -16,17 +23,54 @@ class CommentViewSet(viewsets.ModelViewSet):
     serializer_class = CommentSerializer
 
     def perform_create(self, serializer):
-        serializer.save(author=self.request.user)
+        user = self.request.user
+        if not isinstance(user, CustomUser) or not self.can_comment(user):
+            # Якщо користувач не є екземпляром CustomUser або не має дозволу коментувати
+            raise PermissionDenied("You do not have permission to comment on this post.")
+        else:
+            # Встановлюємо користувача як автора перед збереженням
+            serializer.save(author=user)
+
+    def can_comment(self, user):
+        # Перевіряємо, чи є дозвіл коментувати для даного користувача
+        permission = CommentPermission.objects.filter(target_user=user).first()
+        return permission.can_comment if permission else False
 
     def get_queryset(self):
-        """
-        Optionally restricts the returned comments to a given post,
-        by filtering against a `post_id` query parameter in the URL.
-        """
+        # Фільтруємо коментарі за `post_id`
         queryset = super().get_queryset()
         post_id = self.request.query_params.get('post_id')
         if post_id:
             queryset = queryset.filter(post_id=post_id)
+        return queryset
+
+
+class CommentPermissionViewSet(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        user_id = request.query_params.get('user_id')
+        if not user_id:
+            return Response({'error': 'Missing user_id parameter'}, status=status.HTTP_400_BAD_REQUEST)
+
+        permissions = CommentPermission.objects.filter(target_user_id=user_id)
+        permission = permissions.first()
+        if permission:
+            serializer = CommentPermissionSerializer(permission)
+            return Response(serializer.data)
+        else:
+            return Response({'can_comment': False}, status=status.HTTP_200_OK)
+
+
+class CommentPermissionViewSet2(viewsets.ModelViewSet):
+    queryset = CommentPermission.objects.all()
+    serializer_class = CommentPermissionSerializer
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        user_id = self.request.query_params.get('user_id')
+        if user_id:
+            queryset = queryset.filter(target_user__id=user_id)
         return queryset
 
 
