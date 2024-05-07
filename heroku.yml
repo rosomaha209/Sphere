@@ -1,8 +1,21 @@
-# heroku.yml
 build:
   docker:
-    web: Dockerfile  # Вказівка на Dockerfile бекенду
-    frontend: messaging-ui/Dockerfile  # Dockerfile для фронтенду
+    web: Dockerfile
+    worker: Dockerfile_worker # Якщо у вас є окремі сервіси, наприклад background worker
+
+# Виконуємо команди після розгортання
 release:
+  image: web
   command:
-    - python manage.py migrate  # Запуск міграцій для Django
+    - python manage.py migrate
+
+# Описуємо сервіси, які будуть запущені
+run:
+  web:
+    command: gunicorn sphere.wsgi --log-file -
+  worker:
+    command: celery -A sphere worker -l info
+
+  # Для React, який обслуговується через Nginx
+  react:
+    command: nginx -g 'daemon off;'

@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2122fdaa-686b-458f-a4e4-5995bdd33a87" name="Changes" comment="feat: Deploy with Heroku YAML and Docker" />
+    <list default="true" id="2122fdaa-686b-458f-a4e4-5995bdd33a87" name="Changes" comment="feat: Deploy with Heroku YAML and Docker">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-ui/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/Dockerfile" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -182,7 +185,7 @@
       <workItem from="1714566473374" duration="6289000" />
       <workItem from="1714664944473" duration="30248000" />
       <workItem from="1715091441850" duration="8911000" />
-      <workItem from="1715114568610" duration="2306000" />
+      <workItem from="1715114568610" duration="3063000" />
     </task>
     <task id="LOCAL-00001" summary="innit: initialization my project">
       <option name="closed" value="true" />

@@ -13,3 +13,4 @@ COPY . /app/
 
 # Вказуємо команду для запуску сервера
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["gunicorn", "sphere.wsgi:application", "--bind", "0.0.0.0:$PORT"]
