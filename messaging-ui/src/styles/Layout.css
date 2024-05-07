@@ -48,7 +48,10 @@ nav ul li a:hover {
     margin-left: 0px;
 }
 .logistrations{
-margin-right: 20px;
+    margin-right: 20px;
+
+
+
 }
 .content--container{
 
@@ -57,4 +60,15 @@ margin-right: 20px;
     align-items: center;
     margin-left: 15%;
     margin-right: 15%;
+}
+.audio{
+    max-height: 20px;
+    max-width: 100px;
+
+}
+.foto{
+    max-width: 100px;
+}
+.rightside{
+    display: flex;
 }

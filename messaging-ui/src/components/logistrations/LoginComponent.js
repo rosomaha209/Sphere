@@ -6,8 +6,9 @@ import { useAuth } from './AuthContext';
 
 function LoginComponent() {
     const [credentials, setCredentials] = useState({ email: '', password: '' });
+    const [errorMessage, setErrorMessage] = useState('');
     const history = useHistory();
-    const { setIsLoggedIn } = useAuth(); // Доступ до setIsLoggedIn через useAuth
+    const { setIsLoggedIn } = useAuth();
 
     const handleChange = (e) => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value });
@@ -15,6 +16,7 @@ function LoginComponent() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setErrorMessage(''); // Очищення попереднього повідомлення про помилки
         try {
             const response = await axios.post('http://localhost:8000/token/', credentials);
             const { access, refresh } = response.data;
@@ -26,14 +28,17 @@ function LoginComponent() {
             const decoded = jwtDecode(access);
             if (decoded.user_id) {
                 localStorage.setItem('userId', decoded.user_id.toString());
-                setIsLoggedIn(true); // Оновлення стану входу
-
+                setIsLoggedIn(true);
                 history.push('/home');
             } else {
-                console.error('UserId not found in token');
+                setErrorMessage('UserId not found in the token.');
             }
         } catch (error) {
-            console.error('Login failed:', error.response ? error.response.data : 'No response from server');
+            if (error.response && error.response.status === 400) {
+                setErrorMessage('Invalid email or password. Please try again.');
+            } else {
+                setErrorMessage('Server error. Please try again later.');
+            }
         }
     };
 
@@ -44,6 +49,12 @@ function LoginComponent() {
                     <div className="card shadow">
                         <div className="card-body">
                             <h5 className="card-title">Login</h5>
+
+                            {errorMessage && (
+                                <div className="alert alert-danger" role="alert">
+                                    {errorMessage}
+                                </div>
+                            )}
                             <form onSubmit={handleSubmit}>
                                 <div className="mb-3">
                                     <label htmlFor="email" className="form-label">Email Address</label>

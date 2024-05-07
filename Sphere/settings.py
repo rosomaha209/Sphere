@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     'channels',
     'corsheaders',
     'posts',
-    'feed',
+
 ]
 
 MIDDLEWARE = [

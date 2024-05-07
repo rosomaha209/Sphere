@@ -6,6 +6,7 @@ import '../styles/UserProfile.css';
 function UserProfileComponent() {
     const [userData, setUserData] = useState(null);
     const history = useHistory();  // Ініціалізуємо useHistory
+    const defaultProfilePic = 'http://localhost:8000/media/images/no_foto.jpg';
 
     useEffect(() => {
         const fetchUserData = async () => {
@@ -35,8 +36,13 @@ function UserProfileComponent() {
                 <p>Phone Number: {userData.phone_number}</p>
                 <p>City: {userData.city}</p>
                 <p>About Me: {userData.about_me}</p>
-                {userData.profile_pic && <img src={userData.profile_pic} alt="Profile" className="profile-pic"/>
-                }
+                <div>
+                    <img
+                        src={userData.profile_pic ? userData.profile_pic : defaultProfilePic}
+                        alt="Profile"
+                        className="profile-pic"
+                    />
+                </div>
             </div>
         </div>
     );
