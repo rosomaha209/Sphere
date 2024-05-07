@@ -1,0 +1,8 @@
+# heroku.yml
+build:
+  docker:
+    web: Dockerfile  # Вказівка на Dockerfile бекенду
+    frontend: messaging-ui/Dockerfile  # Dockerfile для фронтенду
+release:
+  command:
+    - python manage.py migrate  # Запуск міграцій для Django
