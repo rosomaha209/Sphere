@@ -21,4 +21,4 @@ run:
     command: nginx -g 'daemon off;'
 addons:
   - plan: heroku-postgresql:hobby-dev
-    as: DATABASE
+    as: db
