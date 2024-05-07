@@ -19,3 +19,6 @@ run:
   # Для React, який обслуговується через Nginx
   react:
     command: nginx -g 'daemon off;'
+addons:
+  - plan: heroku-postgresql:hobby-dev
+    as: DATABASE
