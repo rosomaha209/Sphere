@@ -4,41 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2122fdaa-686b-458f-a4e4-5995bdd33a87" name="Changes" comment="feat: add WYSIWYG-redactor">
+    <list default="true" id="2122fdaa-686b-458f-a4e4-5995bdd33a87" name="Changes" comment="test: add tests">
+      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/posts/signals.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/AudioPlayer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/UserNavBarProfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sphere/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sphere/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feed/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feed/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feed/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feed/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feed/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feed/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feed/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-ui/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-ui/src/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/Layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/UserProfileComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/UserProfileComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/logistrations/LoginComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/logistrations/LoginComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-ui/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/messaging-ui/src/styles/Layout.css" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/styles/Layout.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/messaging/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notifications/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/notifications/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/search/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/search/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/posts/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/apps.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,11 +84,11 @@
       <recent name="C:\Users\rosom\PycharmProjects\Sphere" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\rosom\PycharmProjects\Sphere\posts" />
       <recent name="C:\Users\rosom\PycharmProjects\Sphere\messaging-ui\src\components\posts" />
       <recent name="C:\Users\rosom\PycharmProjects\Sphere\messaging-ui\src\components\logistrations" />
       <recent name="C:\Users\rosom\PycharmProjects\Sphere\messaging-ui\src\styles" />
       <recent name="C:\Users\rosom\PycharmProjects\Sphere\messaging-ui\src" />
-      <recent name="C:\Users\rosom\PycharmProjects\Sphere\messaging-ui\src\components\Chat" />
     </key>
   </component>
   <component name="RunManager" selected="npm.test:manual">
@@ -216,7 +188,8 @@
       <workItem from="1714507030881" duration="4532000" />
       <workItem from="1714566473374" duration="6289000" />
       <workItem from="1714664944473" duration="30248000" />
-      <workItem from="1715091441850" duration="5189000" />
+      <workItem from="1715091441850" duration="8911000" />
+      <workItem from="1715114568610" duration="613000" />
     </task>
     <task id="LOCAL-00001" summary="innit: initialization my project">
       <option name="closed" value="true" />
@@ -386,7 +359,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715085487695</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="test: add tests">
+      <option name="closed" value="true" />
+      <created>1715096955556</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1715096955557</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -422,6 +403,7 @@
     <MESSAGE value="fix: image field" />
     <MESSAGE value="fix: PermissionsManager" />
     <MESSAGE value="feat: add WYSIWYG-redactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add WYSIWYG-redactor" />
+    <MESSAGE value="test: add tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="test: add tests" />
   </component>
 </project>
