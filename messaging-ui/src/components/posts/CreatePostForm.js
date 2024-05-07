@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useHistory } from "react-router-dom";
-import 'bootstrap-icons/font/bootstrap-icons.css'; // Переконайтесь, що іконки Bootstrap підключені
+import 'react-quill/dist/quill.snow.css';
+import ReactQuill from 'react-quill';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 const CreatePostForm = ({ onPostCreated }) => {
   const [content, setContent] = useState('');
@@ -29,14 +31,13 @@ const CreatePostForm = ({ onPostCreated }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="position-relative">
-      <textarea
+    <form onSubmit={handleSubmit} className="position-relative" style={{ width: '1000px' , maxWidth: '1000px' }}>
+      <ReactQuill
         value={content}
-        onChange={(e) => setContent(e.target.value)}
+        onChange={setContent}
         placeholder="Write something..."
-        required
         className="form-control"
-        style={{paddingRight: '2.5rem'}}
+        style={{paddingRight: '2.5rem' }}
       />
       <button
         type="submit"

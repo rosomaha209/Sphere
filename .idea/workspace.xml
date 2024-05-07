@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2122fdaa-686b-458f-a4e4-5995bdd33a87" name="Changes" comment="fix: image field">
-      <change afterPath="$PROJECT_DIR$/messaging-ui/src/styles/PermissionsManager.css" afterDir="false" />
+    <list default="true" id="2122fdaa-686b-458f-a4e4-5995bdd33a87" name="Changes" comment="fix: PermissionsManager">
+      <change afterPath="$PROJECT_DIR$/messaging-ui/webpack.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/EditProfileComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/EditProfileComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/PermissionsManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/PermissionsManager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/posts/temp.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/posts/temp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-ui/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/posts/CreatePostForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/posts/CreatePostForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/posts/Post.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/posts/Post.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-ui/src/styles/PermissionsManager.css" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/styles/PermissionsManager.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,34 +50,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Django Server.Sphere.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.RegisterComponent.js.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
-    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR_AND_PREVIEW&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/rosom/PycharmProjects/Sphere/media&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.LLMConfigurable&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\PyCharm 2023.3.5\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Django Server.Sphere.executor": "Run",
+    "Node.js.RegisterComponent.js.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
+    "django.template.preview.state": "SHOW_EDITOR_AND_PREVIEW",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/rosom/PycharmProjects/Sphere/media",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.test:manual.executor": "Run",
+    "settings.editor.selected.configurable": "ml.llm.LLMConfigurable",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\PyCharm 2023.3.5\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\rosom\PycharmProjects\Sphere\media" />
@@ -89,7 +92,7 @@
       <recent name="C:\Users\rosom\PycharmProjects\Sphere\messaging-ui\src\components\Chat" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.RegisterComponent.js">
+  <component name="RunManager" selected="npm.test:manual">
     <configuration name="RegisterComponent.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/messaging-ui/src/components/logistrations/RegisterComponent.js" working-dir="$PROJECT_DIR$/messaging-ui/src/components">
       <method v="2" />
     </configuration>
@@ -118,8 +121,19 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test:manual" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/messaging-ui/node_modules/mini-css-extract-plugin/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test:manual" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.test:manual" />
         <item itemvalue="Node.js.RegisterComponent.js" />
       </list>
     </recent_temporary>
@@ -328,7 +342,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714516328198</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="fix: PermissionsManager">
+      <option name="closed" value="true" />
+      <created>1715082667463</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1715082667463</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -362,6 +384,7 @@
     <MESSAGE value="fix: change gitignore, add dockerfile and docker-compose to whitelist" />
     <MESSAGE value="fix: push docker file" />
     <MESSAGE value="fix: image field" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: image field" />
+    <MESSAGE value="fix: PermissionsManager" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: PermissionsManager" />
   </component>
 </project>
