@@ -5,8 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2122fdaa-686b-458f-a4e4-5995bdd33a87" name="Changes" comment="feat: Deploy with Heroku YAML and Docker">
+      <change afterPath="$PROJECT_DIR$/game/consumers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/game/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/game/routing.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-ui/src/components/game/GameList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-ui/src/components/game/TicTacToeGame.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/migrations/0008_customuser_wins.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/migrations/0009_remove_customuser_wins.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/heroku.yml" beforeDir="false" afterPath="$PROJECT_DIR$/heroku.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sphere/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sphere/asgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sphere/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sphere/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sphere/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sphere/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-ui/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-ui/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-ui/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-ui/src/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/Layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-ui/src/components/logistrations/LoginComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-ui/src/components/logistrations/LoginComponent.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,35 +61,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Django Server.Sphere.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.RegisterComponent.js.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
-    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR_AND_PREVIEW&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/rosom/PycharmProjects/Sphere/media&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.test:manual.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.LLMConfigurable&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\PyCharm 2023.3.5\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Django Server.Sphere.executor": "Run",
+    "Node.js.RegisterComponent.js.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
+    "django.template.preview.state": "SHOW_EDITOR_AND_PREVIEW",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/rosom/PycharmProjects/Sphere/media",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.test:manual.executor": "Run",
+    "settings.editor.selected.configurable": "Errors",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\PyCharm 2023.3.5\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\rosom\PycharmProjects\Sphere\media" />
@@ -186,6 +202,10 @@
       <workItem from="1714664944473" duration="30248000" />
       <workItem from="1715091441850" duration="8911000" />
       <workItem from="1715114568610" duration="4673000" />
+      <workItem from="1715517328847" duration="124000" />
+      <workItem from="1715517645330" duration="5288000" />
+      <workItem from="1715524400648" duration="343000" />
+      <workItem from="1715525199641" duration="13580000" />
     </task>
     <task id="LOCAL-00001" summary="innit: initialization my project">
       <option name="closed" value="true" />

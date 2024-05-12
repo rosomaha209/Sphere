@@ -28,6 +28,7 @@ function LoginComponent() {
             const decoded = jwtDecode(access);
             if (decoded.user_id) {
                 localStorage.setItem('userId', decoded.user_id.toString());
+
                 setIsLoggedIn(true);
                 history.push('/home');
             } else {

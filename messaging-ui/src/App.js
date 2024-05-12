@@ -12,6 +12,8 @@ import Messages from "./components/messages/Messages";
 import {AuthProvider} from "./components/logistrations/AuthContext";
 import NewsFeed from "./components/posts/NewsFeed";
 import CreatePostForm from "./components/posts/CreatePostForm";
+import TicTacToeGame from "./components/game/TicTacToeGame";
+import GameList from "./components/game/GameList";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -34,7 +36,11 @@ function App() {
           <PrivateRoute path="/home" component={HomePage} isLoggedIn={isLoggedIn} />
           <PrivateRoute path="/news-feed" component={NewsFeed} />
           <PrivateRoute path="/create-post" component={CreatePostForm} />
+
+          <Route path="/games" component={GameList} />
+          <Route path="/game/:gameId" component={TicTacToeGame} />
           <Redirect from="/" exact to="/home" />
+
           {/* Додайте інші маршрути, якщо потрібно */}
         </Switch>
       </Layout>

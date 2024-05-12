@@ -6,13 +6,12 @@ WORKDIR /app
 
 
 COPY package.json package-lock.json ./
-# Копіювання файлу package.json і package-lock.json (якщо він існує)
-COPY messaging-ui/package*.json ./
+
 
 RUN npm install
 
 COPY . ./
-COPY messaging-ui/ .
+
 
 
 

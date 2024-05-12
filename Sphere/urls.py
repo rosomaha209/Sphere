@@ -35,6 +35,7 @@ urlpatterns = [
     path('profile/', UserProfileView.as_view(), name='profile'),
     path('edit-profile/', UserEditView.as_view(), name='edit-profile'),
     path('users/', include('users.urls')),
+    path('game/', include('game.urls')),
     path('messaging/', include('messaging.urls')),
     path('posts/', include('posts.urls')),
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
@@ -45,6 +46,9 @@ urlpatterns = [
     path('api-edit-profile/', UserEditAPIView.as_view(), name='api-edit-profile'),
     path('api-login/', LoginAPIView.as_view(), name='api-login'),
     path('posts/comment-permissions/', CommentPermissionViewSet.as_view(), name='comment-permissions'),
+
+
+
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

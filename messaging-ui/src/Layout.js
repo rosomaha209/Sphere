@@ -26,7 +26,9 @@ const Layout = ({ children }) => {
                         </div>
                         <div className="rightside">
                             <div className="logistrations">
+                                <li><Link to="/games">Game</Link></li>
                                 <li><Link to="/register">Register</Link></li>
+
                                 {!isLoggedIn && <li><Link to="/login">Login</Link></li>}
                                 {isLoggedIn && <li><Link to="/logout">Logout</Link></li>}
 
