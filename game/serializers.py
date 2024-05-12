@@ -7,7 +7,7 @@ from users.models import CustomUser
 class PlayerSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
-        fields = ['id', 'first_name', 'last_name', 'profile_pic']
+        fields = ['id', 'first_name', 'last_name', 'profile_pic', 'game_wins']
 
 
 class GameSerializer(serializers.ModelSerializer):

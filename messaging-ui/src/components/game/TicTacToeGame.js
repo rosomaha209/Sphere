@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const TicTacToeGame = () => {
     const { gameId } = useParams();
@@ -113,6 +114,9 @@ const TicTacToeGame = () => {
                 await axios.patch(`http://localhost:8000/game/games/${gameId}/`, {
                     winner: userId
                 });
+
+                // Оновити кількість перемог переможця
+                await axios.patch(`http://localhost:8000/game/players/${userId}/update_wins/`);
             } else {
                 setCurrentSymbol(currentSymbol === 'X' ? 'O' : 'X');
             }
@@ -124,14 +128,17 @@ const TicTacToeGame = () => {
 
     const renderCell = (index) => {
         const isWinningCell = winningCombination.includes(index);
+        const cellSymbol = board[index];
+        const symbolColor = cellSymbol === 'X' ? 'green' : cellSymbol === 'O' ? 'blue' : 'black';
         return (
             <button
                 onClick={() => makeMove(index)}
                 disabled={board[index] !== null || winner !== null}
+                className={`btn ${isWinningCell ? 'btn-danger' : 'btn-light'} border`}
                 style={{
                     width: '100px', height: '100px', fontSize: '24px', cursor: 'pointer',
-                    backgroundColor: isWinningCell ? 'lightcoral' : '#f0f0f0',
-                    border: isWinningCell ? '2px solid red' : '1px solid #000'
+                    color: symbolColor,
+                    backgroundColor: isWinningCell ? 'lightcoral' : '#d3d3d3' // Темніший фон
                 }}
             >
                 {board[index] || ' '}
@@ -140,21 +147,23 @@ const TicTacToeGame = () => {
     };
 
     return (
-        <div>
-            <h1>Game {gameId}</h1>
-            {error && <div style={{ color: 'red' }}>{error}</div>}
-            {game && (
-                <div>
-                    <p>Player X: {game.player_x_info.first_name}</p>
-                    <p>Player O: {game.player_o_info ? game.player_o_info.first_name : 'Waiting for Player O'}</p>
-                    <p>Winner: {winner ? winner : 'Not decided yet'}</p>
+        <div className="container d-flex justify-content-center align-items-center vh-100">
+            <div>
+                <h1 className="text-center">Game {gameId}</h1>
+                {error && <div className="alert alert-danger">{error}</div>}
+                {game && (
+                    <div>
+                        <p>Player X: {game.player_x_info.first_name} (Wins: {game.player_x_info.game_wins})</p>
+                        <p>Player O: {game.player_o_info ? game.player_o_info.first_name : 'Waiting for Player O'} (Wins: {game.player_o_info ? game.player_o_info.game_wins : 0})</p>
+                        <p>Winner: {winner ? winner : 'Not decided yet'}</p>
+                    </div>
+                )}
+                <h2 className="text-center">Game Board</h2>
+                <div className="d-grid gap-3" style={{ gridTemplateColumns: 'repeat(3, 100px)' }}>
+                    {[...Array(9).keys()].map(index => (
+                        <div key={index}>{renderCell(index)}</div>
+                    ))}
                 </div>
-            )}
-            <h2>Game Board</h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 100px)', gap: '5px' }}>
-                {[...Array(9).keys()].map(index => (
-                    <div key={index}>{renderCell(index)}</div>
-                ))}
             </div>
         </div>
     );

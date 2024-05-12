@@ -20,6 +20,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework_simplejwt.views import TokenObtainPairView
 
+from game import views
 from posts.views import CommentPermissionViewSet
 from users.views import UserRegisterView, UserLoginView, UserLogoutView, UserProfileView, LogoutAPIView, \
     CurrentUserView, RegistrationAPIView, UserEditAPIView, UserEditView, LoginAPIView
@@ -46,6 +47,7 @@ urlpatterns = [
     path('api-edit-profile/', UserEditAPIView.as_view(), name='api-edit-profile'),
     path('api-login/', LoginAPIView.as_view(), name='api-login'),
     path('posts/comment-permissions/', CommentPermissionViewSet.as_view(), name='comment-permissions'),
+    path('game/players/<int:pk>/update_wins/', views.update_winner, name='update_player_wins'),
 
 
 

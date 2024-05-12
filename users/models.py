@@ -33,6 +33,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     profile_pic = models.ImageField(upload_to='profile_pics/', null=True, blank=True, default='images/no_foto.jpg')
     city = models.CharField(max_length=100, null=True)
     about_me = models.TextField(null=True)
+    game_wins = models.IntegerField(default=0, null=True)
 
     GENDER_CHOICES = (
         ('M', 'Male'),
