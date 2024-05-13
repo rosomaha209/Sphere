@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function GameList() {
     const [games, setGames] = useState([]);
@@ -57,23 +58,38 @@ function GameList() {
         }
     }
 
+    async function deleteGame(gameId) {
+        try {
+            await axios.delete(`http://localhost:8000/game/games/${gameId}/`);
+            setGames(games.filter(game => game.id !== gameId));
+        } catch (err) {
+            setError('Error deleting the game.');
+            console.error(err);
+        }
+    }
+
     return (
-        <div>
+        <div className="container mt-5">
             <h1>Games</h1>
-            {error && <div style={{ color: 'red' }}>{error}</div>}
-            <ul>
+            {error && <div className="alert alert-danger">{error}</div>}
+            <ul className="list-group">
                 {games.map(game => (
-                    <li key={game.id}>
-                        <span>Game {game.id}: {game.player_x_info.first_name }</span>
-                        {game.player_o === null ? (
-                            <button onClick={() => joinGame(game.id)}>Join Game</button>
-                        ) : (
-                            <button onClick={() => history.push(`/game/${game.id}`)}>View Game</button>
-                        )}
+                    <li key={game.id} className="list-group-item d-flex justify-content-between align-items-center">
+                        <span>
+                            Game {game.id}: {game.player_x_info.first_name}
+                        </span>
+                        <div>
+                            {game.player_o === null ? (
+                                <button onClick={() => joinGame(game.id)} className="btn btn-primary btn-sm me-2">Join Game</button>
+                            ) : (
+                                <button onClick={() => history.push(`/game/${game.id}`)} className="btn btn-secondary btn-sm me-2">View Game</button>
+                            )}
+                            <button onClick={() => deleteGame(game.id)} className="btn btn-danger btn-sm">✖</button>
+                        </div>
                     </li>
                 ))}
             </ul>
-            <button onClick={createNewGame}>Create New Game</button>
+            <button onClick={createNewGame} className="btn btn-success mt-3">Create New Game</button>
         </div>
     );
 }
