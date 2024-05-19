@@ -1,10 +1,11 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index.js', // Вхідна точка вашого застосунку
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: 'bundle.js', // Вихідний файл після збірки
+    path: path.resolve(__dirname, 'dist'), // Директорія для вихідного файлу
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -12,24 +13,23 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-react']
-          }
-        }
+          loader: 'babel-loader', // Використання Babel для транспіляції ES6+ коду в ES5
+        },
       },
       {
-        test: /\.js$/,
-        enforce: 'pre',
-        use: ['source-map-loader'],
-        exclude: /node_modules\/dompurify/,
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'], // Обробка CSS файлів
       },
-      // Інші правила
-    ]
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource', // Обробка зображень
+      },
+    ],
   },
-  mode: 'development',
-
-  ignoreWarnings: [(warning) =>
-    warning.includes("Failed to parse source map")
-  ],
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 9000,
+    historyApiFallback: true, // Дозволяє обробляти маршрути SPA
+  },
 };

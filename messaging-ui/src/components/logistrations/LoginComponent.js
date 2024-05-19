@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
 import { useAuth } from './AuthContext';
 
+import FaceIDAuth from './FaceIDAuth';
+
 function LoginComponent() {
     const [credentials, setCredentials] = useState({ email: '', password: '' });
     const [errorMessage, setErrorMessage] = useState('');
@@ -49,6 +51,8 @@ function LoginComponent() {
                 <div className="col-md-6">
                     <div className="card shadow">
                         <div className="card-body">
+                            <h5 className="card-title">Face Authentication</h5>
+                            <FaceIDAuth />
                             <h5 className="card-title">Login</h5>
 
                             {errorMessage && (

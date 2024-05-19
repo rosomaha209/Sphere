@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'posts',
     'game',
+    'faceID',
 ]
 
 MIDDLEWARE = [
